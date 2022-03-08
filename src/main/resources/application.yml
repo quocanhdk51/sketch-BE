@@ -11,3 +11,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+
+azure:
+  activedirectory:
+    client-id: 12b65564-3f8d-45aa-8989-d0ba296d0186
+    app-id-uri: api://12b65564-3f8d-45aa-8989-d0ba296d0186
