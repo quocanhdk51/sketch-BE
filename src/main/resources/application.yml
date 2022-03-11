@@ -1,8 +1,8 @@
 spring:
   datasource:
-    password: postgres
-    url: jdbc:postgresql://localhost:5432/registration
-    username: postgres
+    url: jdbc:postgresql://sketch-develop.postgres.database.azure.com:5432/sketch
+    username: SketchAdmin
+    password: Ianmoone123456!
   jpa:
     hibernate:
       ddl-auto: update

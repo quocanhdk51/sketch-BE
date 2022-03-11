@@ -9,6 +9,7 @@ import org.apache.tomcat.util.codec.binary.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -40,7 +41,7 @@ public class SketchService {
     }
 
     public Page<SketchRest> getAllSketch(Integer page, Integer size) {
-        Pageable pageable = PageRequest.of(page, size);
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id"));
         return this.sketchRepository.findAll(pageable).map(
                 this::convertSketchToSketchRest
         );
@@ -53,7 +54,7 @@ public class SketchService {
     }
 
     public Page<SketchRest> findSketchesContaining(String name, Integer page, Integer size) {
-        Pageable pageable = PageRequest.of(page, size);
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id"));
         return this.sketchRepository.findByNameContaining(name, pageable).map(
                 this::convertSketchToSketchRest
         );
